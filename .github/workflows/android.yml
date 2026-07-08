@@ -23,8 +23,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Gradle
+    - name: Setup Gradle (Paksa Versi Stable)
       uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.7' # Mengunci versi Gradle ke 8.7 agar cocok dengan KSP bawaan AI Studio
 
     - name: Build APK Matang
       run: gradle assembleDebug
